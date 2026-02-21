@@ -34,8 +34,10 @@ export default {
     io.on("connection", (socket) => {
       strapi.log.info("Client connected to socket.io");
 
-      socket.on("message", (data) => {
+      socket.on("message", (data: any) => {
         strapi.log.info(`Coordinates received: ${JSON.stringify(data)}`);
+
+        io.emit("message", data);
       });
 
       socket.on("disconnect", () => {
