@@ -23,7 +23,7 @@
       "required": true
     },
     "address": {
-      "type": "text",
+      "type": "json",
       "required": true
     },
     "accessByCode": {
