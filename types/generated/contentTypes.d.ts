@@ -444,7 +444,7 @@ export interface ApiCompanyCompany extends Struct.CollectionTypeSchema {
     accessByCode: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
-    address: Schema.Attribute.Text & Schema.Attribute.Required;
+    address: Schema.Attribute.JSON & Schema.Attribute.Required;
     code: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
