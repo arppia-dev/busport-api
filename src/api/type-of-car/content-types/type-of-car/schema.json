@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "types_of_car",
+  "info": {
+    "singularName": "type-of-car",
+    "pluralName": "types-of-car",
+    "displayName": "TypeOfCar"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "cars": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::car.car",
+      "mappedBy": "type"
+    }
+  }
+}

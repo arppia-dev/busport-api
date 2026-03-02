@@ -30,6 +30,12 @@
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "car": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::car.car",
+      "inversedBy": "companies"
     }
   }
 }

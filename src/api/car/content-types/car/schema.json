@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cars",
+  "info": {
+    "singularName": "car",
+    "pluralName": "cars",
+    "displayName": "Car"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "plate": {
+      "type": "string",
+      "required": true,
+      "regex": "^[A-Z]{2}-\\d{3}$"
+    },
+    "type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::type-of-car.type-of-car",
+      "inversedBy": "cars"
+    },
+    "capacity": {
+      "type": "integer",
+      "required": true
+    },
+    "companies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::company.company",
+      "mappedBy": "car"
+    }
+  }
+}
